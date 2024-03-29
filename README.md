@@ -25,73 +25,47 @@ R Type Instruction format
 |---|---|---|
 | (4 bit)| (3 bit)| (9 bits signed)| 
 
-Instructions Encoding: 
-ADD:
+## Instructions Encoding: 
 
-00_00
+### ADD:
+|||||||
+|---|---|---|---|---|---|
+| 00_00 | RA | RB | RC | 0 | 00 | 
+### NDU:
+|||||||
+|---|---|---|---|---|---|
+| 00_10| RA| RB| RC| 0| 00| 
 
-RA
+### LW:
 
-RB
+|||||
+|---|---|---|---|
+ |01_00 |RA |RB |6 bits Immediate |
 
-RC
 
-0
+### SW:
 
-00
 
-NDU:
+||||
+|---|---|---|
+| 01_01| RA| RB| 6 bits Immediate| 
 
-00_10
 
-RA
+### BEQ:
 
-RB
+||||
+|---|---|---|
+| 11_00| RA| RB| 6 bits Immediate|
 
-RC
+### JAL:
 
-0
+||||
+|---|---|---| 
+| 10_00 | RA | 9-bit Immediate offset |
 
-00
 
-LW:
+> RA: Register A
 
-01_00
+> RB: Register B
 
-RA
-
-RB
-
-6 bits Immediate
-
-SW:
-
-01_01
-
-RA
-
-RB
-
-6 bits Immediate
-
-BEQ:
-
-11_00
-
-RA
-
-RB
-
-6 bits Immediate
-
-JAL:
-
-10_00
-
-RA
-
-9-bit Immediate offset
-
-RA: Register A
-RB: Register B
-RC: Register C
+> RC: Register C
