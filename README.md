@@ -1,9 +1,6 @@
 # 16Bit_RISC_Processor
 
-Repo for by implementation of 
-
-
-NITC-RISC18 Instruction Set Architecture
+Repo for by implementation of NITC-RISC18 Instruction Set Architecture
 
 
 The Little-Endian Computer Architecture serves as the foundation for the development of the 16-bit, very simple NITC-RISC18 computer for teaching. It (NITC-RISC18) is an 8-register, 16-bit computer system. It uses registers R0 to R7 for general purposes. However, Register R7 always stores the program counter. This architecture also uses a condition code register, which has two flags: the Carry flag (C) and the Zero flag (Z).
@@ -12,64 +9,21 @@ The NITC-RISC18 is very simple, but it is general enough to solve complex proble
 
 R Type Instruction format
 
-Opcode
+| Opcode| Register A (RA)| Register B (RB)| Register B (RB)| Unused |Condition (CZ) |
+|---|---|---|---|---|---|
+ |(4 bit) |(3 bit) |(3-bit) |(3-bit) |(1 bit) |(2 bit) |
 
-Register A (RA)
-
-Register B (RB)
-
-Register B (RB)
-
-Unused
-
-Condition (CZ)
-
-(4 bit)
-
-(3 bit)
-
-(3-bit)
-
-(3-bit)
-
-(1 bit)
-
-(2 bit)
-
-I Type Instruction format
-
-Opcode
-
-Register A (RA)
-
-Register C (RC)
-
-Immediate
-
-(4 bit)
-
-(3 bit)
-
-(3-bit)
-
-(6 bits signed)
-
+## I Type Instruction format
+| Opcode| Register A (RA)| Register C (RC)| Immediate| 
+|---|---|---|---|
+| (4 bit)| (3 bit)| (3-bit)| (6 bits signed)| 
  
 
-J Type Instruction format
+## J Type Instruction format:
 
-Opcode
-
-Register A (RA)
-
-Immediate
-
-(4 bit)
-
-(3 bit)
-
-(9 bits signed)
-
+| Opcode| Register A (RA)| Immediate| 
+|---|---|---|
+| (4 bit)| (3 bit)| (9 bits signed)| 
 
 Instructions Encoding: 
 ADD:
